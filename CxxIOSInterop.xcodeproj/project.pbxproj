@@ -7,16 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50C5B9D627CAFABD000A05CF /* Cxx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C5B9D427CAFABD000A05CF /* Cxx.cpp */; };
 		50EBA0DA27C9C26C00D09E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBA0D927C9C26C00D09E90 /* AppDelegate.swift */; };
 		50EBA0DC27C9C26C00D09E90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBA0DB27C9C26C00D09E90 /* SceneDelegate.swift */; };
 		50EBA0DE27C9C26C00D09E90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBA0DD27C9C26C00D09E90 /* ViewController.swift */; };
 		50EBA0E127C9C26C00D09E90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50EBA0DF27C9C26C00D09E90 /* Main.storyboard */; };
 		50EBA0E327C9C26F00D09E90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50EBA0E227C9C26F00D09E90 /* Assets.xcassets */; };
 		50EBA0E627C9C26F00D09E90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50EBA0E427C9C26F00D09E90 /* LaunchScreen.storyboard */; };
-		50EBA0F827C9C9A200D09E90 /* Cxx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50EBA0F627C9C9A200D09E90 /* Cxx.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50C5B9C527CAE0CE000A05CF /* CxxIOSInterop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CxxIOSInterop.xcodeproj; sourceTree = "<group>"; };
+		50C5B9CE27CAF8E7000A05CF /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		50C5B9D027CAF8F8000A05CF /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		50C5B9D227CAF905000A05CF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		50C5B9D427CAFABD000A05CF /* Cxx.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cxx.cpp; sourceTree = "<group>"; };
+		50C5B9D527CAFABD000A05CF /* Cxx.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Cxx.hpp; sourceTree = "<group>"; };
+		50C5B9D727CAFB12000A05CF /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		50EBA0D627C9C26C00D09E90 /* CxxIOSInterop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CxxIOSInterop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50EBA0D927C9C26C00D09E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50EBA0DB27C9C26C00D09E90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,9 +33,6 @@
 		50EBA0E527C9C26F00D09E90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50EBA0E727C9C26F00D09E90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50EBA0F527C9C9A200D09E90 /* CxxIOSInterop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CxxIOSInterop-Bridging-Header.h"; sourceTree = "<group>"; };
-		50EBA0F627C9C9A200D09E90 /* Cxx.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Cxx.cpp; sourceTree = "<group>"; };
-		50EBA0F727C9C9A200D09E90 /* Cxx.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Cxx.hpp; sourceTree = "<group>"; };
-		50EBA0F927C9C9DE00D09E90 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,11 +46,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		505B5DB827CAE0770008AAB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50C5B9D227CAF905000A05CF /* libc++.tbd */,
+				50C5B9D027CAF8F8000A05CF /* libc++abi.tbd */,
+				50C5B9CE27CAF8E7000A05CF /* libc++.1.tbd */,
+				50C5B9C527CAE0CE000A05CF /* CxxIOSInterop.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50C5B9C627CAE0CE000A05CF /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		50EBA0CD27C9C26C00D09E90 = {
 			isa = PBXGroup;
 			children = (
 				50EBA0D827C9C26C00D09E90 /* CxxIOSInterop */,
 				50EBA0D727C9C26C00D09E90 /* Products */,
+				505B5DB827CAE0770008AAB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +98,9 @@
 		50EBA0F427C9C99000D09E90 /* Cxx */ = {
 			isa = PBXGroup;
 			children = (
-				50EBA0F627C9C9A200D09E90 /* Cxx.cpp */,
-				50EBA0F727C9C9A200D09E90 /* Cxx.hpp */,
-				50EBA0F927C9C9DE00D09E90 /* module.modulemap */,
+				50C5B9D427CAFABD000A05CF /* Cxx.cpp */,
+				50C5B9D527CAFABD000A05CF /* Cxx.hpp */,
+				50C5B9D727CAFB12000A05CF /* module.modulemap */,
 			);
 			path = Cxx;
 			sourceTree = "<group>";
@@ -131,6 +152,12 @@
 			mainGroup = 50EBA0CD27C9C26C00D09E90;
 			productRefGroup = 50EBA0D727C9C26C00D09E90 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 50C5B9C627CAE0CE000A05CF /* Products */;
+					ProjectRef = 50C5B9C527CAE0CE000A05CF /* CxxIOSInterop.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				50EBA0D527C9C26C00D09E90 /* CxxIOSInterop */,
@@ -159,7 +186,7 @@
 				50EBA0DE27C9C26C00D09E90 /* ViewController.swift in Sources */,
 				50EBA0DA27C9C26C00D09E90 /* AppDelegate.swift in Sources */,
 				50EBA0DC27C9C26C00D09E90 /* SceneDelegate.swift in Sources */,
-				50EBA0F827C9C9A200D09E90 /* Cxx.cpp in Sources */,
+				50C5B9D627CAFABD000A05CF /* Cxx.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +216,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -242,11 +270,13 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "-I./CxxIOSInterop/Cxx";
 				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				SDKROOT = iphoneos;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -256,6 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -302,8 +333,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_SWIFT_FLAGS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "-I./CxxIOSInterop/Cxx";
 				PLIST_FILE_OUTPUT_FORMAT = "same-as-input";
 				SDKROOT = iphoneos;
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
@@ -317,12 +349,14 @@
 		50EBA0EB27C9C26F00D09E90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MD99PJ2344;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CxxIOSInterop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -335,10 +369,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "-I./CxxIOSInterop/Cxx";
 				PRODUCT_BUNDLE_IDENTIFIER = cabmeurer.CxxIOSInterop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CxxIOSInterop/CxxIOSInterop-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -349,12 +385,14 @@
 		50EBA0EC27C9C26F00D09E90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MD99PJ2344;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CxxIOSInterop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -367,10 +405,12 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "-I./CxxIOSInterop/Cxx";
 				PRODUCT_BUNDLE_IDENTIFIER = cabmeurer.CxxIOSInterop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CxxIOSInterop/CxxIOSInterop-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
