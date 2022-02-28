@@ -25,6 +25,7 @@ Create a module.modulemap file to expose your source code
 ```
 //In module.modulemap
 module Cxx {
+//note that your header should be the file that containts your method implementations
     header "Cxx.hpp"
 }
 ```

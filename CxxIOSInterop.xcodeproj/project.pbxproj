@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		507F3CC827CD409800695D3E /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F3CC727CD409800695D3E /* Example.swift */; };
 		50C5B9D627CAFABD000A05CF /* Cxx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50C5B9D427CAFABD000A05CF /* Cxx.cpp */; };
 		50EBA0DA27C9C26C00D09E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBA0D927C9C26C00D09E90 /* AppDelegate.swift */; };
 		50EBA0DC27C9C26C00D09E90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EBA0DB27C9C26C00D09E90 /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		507F3CC727CD409800695D3E /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		50C5B9C527CAE0CE000A05CF /* CxxIOSInterop.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CxxIOSInterop.xcodeproj; sourceTree = "<group>"; };
 		50C5B9CE27CAF8E7000A05CF /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		50C5B9D027CAF8F8000A05CF /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
@@ -85,6 +87,7 @@
 				50EBA0D927C9C26C00D09E90 /* AppDelegate.swift */,
 				50EBA0DB27C9C26C00D09E90 /* SceneDelegate.swift */,
 				50EBA0DD27C9C26C00D09E90 /* ViewController.swift */,
+				507F3CC727CD409800695D3E /* Example.swift */,
 				50EBA0F427C9C99000D09E90 /* Cxx */,
 				50EBA0F527C9C9A200D09E90 /* CxxIOSInterop-Bridging-Header.h */,
 				50EBA0DF27C9C26C00D09E90 /* Main.storyboard */,
@@ -187,6 +190,7 @@
 				50EBA0DA27C9C26C00D09E90 /* AppDelegate.swift in Sources */,
 				50EBA0DC27C9C26C00D09E90 /* SceneDelegate.swift in Sources */,
 				50C5B9D627CAFABD000A05CF /* Cxx.cpp in Sources */,
+				507F3CC827CD409800695D3E /* Example.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
