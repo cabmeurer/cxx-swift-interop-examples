@@ -2,11 +2,11 @@
 //  Cxx.hpp
 //  CxxIOSInterop
 //
-//  Created by Caleb Meurer on 2/26/22.
+//  Created by Caleb Meurer on 2/28/22.
 //
 
 #ifndef Cxx_hpp
 #define Cxx_hpp
 int cxxFunction(int n);
 
-#endif
+#endif /* Cxx_hpp */
