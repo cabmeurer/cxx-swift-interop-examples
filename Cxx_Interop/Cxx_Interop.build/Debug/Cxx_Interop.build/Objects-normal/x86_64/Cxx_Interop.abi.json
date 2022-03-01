@@ -1,0 +1,58 @@
+{
+  "kind": "Root",
+  "name": "TopLevel",
+  "printedName": "TopLevel",
+  "children": [
+    {
+      "kind": "Import",
+      "name": "Cxx",
+      "printedName": "Cxx",
+      "declKind": "Import",
+      "moduleName": "Cxx_Interop"
+    },
+    {
+      "kind": "Import",
+      "name": "Foundation",
+      "printedName": "Foundation",
+      "declKind": "Import",
+      "moduleName": "Cxx_Interop"
+    },
+    {
+      "kind": "Import",
+      "name": "_Concurrency",
+      "printedName": "_Concurrency",
+      "declKind": "Import",
+      "moduleName": "Cxx_Interop"
+    },
+    {
+      "kind": "TypeDecl",
+      "name": "Cxx_Interop",
+      "printedName": "Cxx_Interop",
+      "children": [
+        {
+          "kind": "Function",
+          "name": "main",
+          "printedName": "main()",
+          "children": [
+            {
+              "kind": "TypeNominal",
+              "name": "Void",
+              "printedName": "()"
+            }
+          ],
+          "declKind": "Func",
+          "usr": "s:11Cxx_InteropAAV4mainyyFZ",
+          "mangledName": "$s11Cxx_InteropAAV4mainyyFZ",
+          "moduleName": "Cxx_Interop",
+          "static": true,
+          "funcSelfKind": "NonMutating"
+        }
+      ],
+      "declKind": "Struct",
+      "usr": "s:11Cxx_InteropAAV",
+      "mangledName": "$s11Cxx_InteropAAV",
+      "moduleName": "Cxx_Interop"
+    }
+  ],
+  "json_format_version": 6
+}

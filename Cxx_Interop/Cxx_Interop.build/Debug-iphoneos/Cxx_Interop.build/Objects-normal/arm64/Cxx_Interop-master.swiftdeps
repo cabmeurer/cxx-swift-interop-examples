@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "8db0a9a6b328899e249108348704c1b77416c006aaa71768dbabbff4db61e28b"
+build_start_time: [1645928647, 981079101]
+build_end_time: [1645928648, 804837942]
+inputs:
+  "/Users/calebmeurer/Desktop/projects/ios-macos/paper/CxxInteropDemo-iOSApp/Cxx_Interop/Sources/Cxx_Interop/Example.swift": !private [1645928319, 532646417]
