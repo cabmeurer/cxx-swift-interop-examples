@@ -11,40 +11,40 @@ This document is desgined to get you started with bidirectional API-level intero
 
 ## Creating a Module to contain your C++ source code
 
-- Create a new C++ implementation and header file, and generate a bridging header when prompted
+- Create a new C++ implementation and header file
 - For this example we will call the files Cxx, so we should have a Cxx.cpp and Cxx.hpp.
-- Import your C++ header, into the bridging header 
-```
-//In ProjectName-Bridging-Header
-#import "Cxx.hpp"
-```
-Create a module.modulemap file to expose your source code 
-- In order to expose our C++ code we must designate a separate as the source.
-- Create an empty file and call it `module.modulemap`
-- In this file create the module for your source code, and define your C++ header
+- Next create an empty file and call it `module.modulemap`, in this file create the module for your source code, and define your C++ header (`requires cplusplus` isn't required but it's convention for C++ modules, especially if they use C++ features).
+
 ```
 //In module.modulemap
 module Cxx {
-//note that your header should be the file that containts your method implementations
+    //note that your header should be the file that containts your method implementations
     header "Cxx.hpp"
+    requires cplusplus
 }
 ```
+
 - Move the newly created files (Cxx.cpp, Cxx.hpp, module.modulemap) into a separate directory (this should remain in your project directory)
 
 <img width="252" alt="Screen Shot 2022-02-26 at 9 14 06 PM" src="https://user-images.githubusercontent.com/62521716/155867937-9d9d6c62-4418-414d-bc4e-5d12c2055022.png">
 
 ## Adding C++ to an Xcode project
+- In your xcode project, follow the steps [Creating a Module to contain your C++ source code](#creating-a-module-to-contain-your-c-source-code) in your project directory
 
-Add the C++ module as a Swift Compiler flag in your project's directory
+Add the C++ module to the include path and enable C++ interop:
 - Navigate to your project directory 
-- In both the `Project` and `Targets`, navigate to `Build Settings` -> `Swift Compiler - Custom Flags`
-- Under `Other Swift Flags` add your search path to the C++ module with the `-I` prefix to import.
+- In `Project` navigate to `Build Settings` -> `Swift Compiler`
+- Under `Custom Flags` -> `Other Swift Flags` add`-Xfrontend -enable-cxx-interop`
+- Under `Search Paths` -> `Import Paths` add your search path to the C++ module (i.e, `./ProjectName/Cxx`). Repeat this step in `Other Swift Flags` 
+
 ```
-//Add to Other Swift Flags
+//Add to Other Swift Flags and Import Paths respectively
+-Xfrontend -enable-cxx-interop 
 -I./ProjectName/Cxx
 ```
 
-- This should now allow your to import your C++ Module into any `.swift` file
+- This should now allow your to import your C++ Module into any `.swift` file.
+
 ```
 //In ViewController.swift
 import UIKit
@@ -53,7 +53,7 @@ import Cxx
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let result = cxx_function(7)
+        let result = cxxFunction(7)
         print(result)
     }
 }
@@ -63,7 +63,9 @@ class ViewController: UIViewController {
 //In Cxx.cpp
 
 #include "Cxx.hpp"
-int cxx_function(int n);
+int cxxFunction(int n) {
+    return n;
+}
 
 ```
 
@@ -73,9 +75,7 @@ int cxx_function(int n);
 #ifndef Cxx_hpp
 #define Cxx_hpp
 
-int cxx_function(int n) {
-    return n;
-}
+int cxxFunction(int n);
 
 #endif
 
@@ -83,7 +83,8 @@ int cxx_function(int n) {
 
 
 ## Creating a Swift Package
-- After creating your Swift package project, follow the steps [Creating a Module to contain your C++ source code](#creating-a-module-to-contain-your-c-source-code) in your `Source` directory
+After creating your Swift package project, follow the steps [Creating a Module to contain your C++ source code](#creating-a-module-to-contain-your-c-source-code) in your `Source` directory
+
 - In your Package Manifest, you need to configure the Swift target's dependencies and compiler flags
 - In this example the name of the package is `Cxx_Interop`
 - Swift code will be in `Sources/Cxx_Interop` called `main.swift`
@@ -112,7 +113,6 @@ let package = Package(
             name: "Cxx",
             dependencies: []
         ),
-        //Executable is only needed for using a main.swift, otherwise it can just be a .target
         .executableTarget(
             name: "Cxx_Interop",
             dependencies: ["Cxx"],
@@ -133,21 +133,23 @@ let package = Package(
 ```
 //In main.swift
 
-import Foundation
 import Cxx
 
 public struct Cxx_Interop {
     
     public func callCxxFunction(n: Int32) -> Int32 {
-        return callCxxFunction(n: n)
+        return cxxFunction(n: n)
     }
 }
 
+print(Cxx_Interop().callCxxFunction(n: 7))
+//outputs: 7
+
 ```
 
-
 ## Building with CMake
-- After creating your project follow the steps [Creating a Module to contain your C++ source code](#creating-a-module-to-contain-your-c-source-code)
+After creating your project follow the steps [Creating a Module to contain your C++ source code](#creating-a-module-to-contain-your-c-source-code)
+
 - Create a `CMakeLists.txt` file and configure for your project
 - In`add_library` invoke `cxx-support` with the path to the C++ implementation file
 - Add the `target_include_directories` with `cxx-support` and path to the C++ Module `${CMAKE_SOURCE_DIR}/Sources/Cxx`
@@ -184,12 +186,11 @@ target_link_libraries(Cxx_Interop PRIVATE cxx-support)
 ```
 //In main.swift
 
-import Foundation
 import Cxx
 
 public struct Cxx_Interop {
     public static func main() {
-        let result = cxx_function(7)
+        let result = cxxFunction(7)
         print(result)
     }
 }
@@ -198,10 +199,11 @@ Cxx_Interop.main()
 
 ```
 
-- In your projects direcetoy, run `cmake` to generate the the systems build files
+- In your projects direcetoy, run `cmake` to generate the systems build files
 
 - To generate an Xcode project run `cmake -GXcode` 
 - To generate with Ninja run `cmake -GNinja`
 
 - For more information on `cmake` see the  'GettingStarted' documentation: (https://github.com/apple/swift/blob/main/docs/HowToGuides/GettingStarted.md)
+
 

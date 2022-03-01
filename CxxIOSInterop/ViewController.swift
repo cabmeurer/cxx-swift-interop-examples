@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let result = cxx_function(7)
+        let result = cxxFunction(7)
         print(result)
     }
 }

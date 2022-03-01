@@ -7,6 +7,6 @@
 
 #ifndef Cxx_hpp
 #define Cxx_hpp
-int cxx_function(int n);
+int cxxFunction(int n);
 
 #endif

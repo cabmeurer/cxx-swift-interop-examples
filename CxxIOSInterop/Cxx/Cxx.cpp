@@ -7,6 +7,6 @@
 
 #include "Cxx.hpp"
 
-int cxx_function(int n) {
+int cxxFunction(int n) {
     return n;
 }
