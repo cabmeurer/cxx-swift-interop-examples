@@ -1,0 +1,4 @@
+/Users/calebmeurer/Desktop/projects/ios-macos/paper/CxxInteropDemo-iOSApp/Cxx_Interop/CMakeFiles/cxx-support.dir
+/Users/calebmeurer/Desktop/projects/ios-macos/paper/CxxInteropDemo-iOSApp/Cxx_Interop/CMakeFiles/Cxx_Interop.dir
+/Users/calebmeurer/Desktop/projects/ios-macos/paper/CxxInteropDemo-iOSApp/Cxx_Interop/CMakeFiles/ALL_BUILD.dir
+/Users/calebmeurer/Desktop/projects/ios-macos/paper/CxxInteropDemo-iOSApp/Cxx_Interop/CMakeFiles/ZERO_CHECK.dir
